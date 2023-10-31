@@ -1,5 +1,6 @@
 //import Message from "./Message";
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 function App() {
   let listItems = ["Piyush", "Ayush", "Yash", "Riya"]!;
   let heading = "Names";
@@ -11,6 +12,9 @@ function App() {
         heading={heading}
         onSelectItem={handleSelectItem}
       />
+      <Alert>
+        Successful <b>Alert</b>
+      </Alert>
     </div>
   );
 }
