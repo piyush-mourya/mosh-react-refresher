@@ -1,17 +1,21 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let listItems = ["Piyush", "Ayush", "Yash", "Riya"];
+interface Props {
+  groupItems: String[];
+  heading: String;
+}
+
+function ListGroup({ groupItems, heading }: Props) {
   // Hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     // Fragment <></> for surrounding multiple blocks
     <>
-      <h1>List</h1>
-      {listItems.length === 0 && <p>No items Found</p>}
+      <h1>{heading}</h1>
+      {groupItems.length === 0 && <p>No items Found</p>}
       <ul className="list-group">
-        {listItems.map((item, index) => (
+        {groupItems.map((item, index) => (
           <li
             className={
               selectedIndex === index
